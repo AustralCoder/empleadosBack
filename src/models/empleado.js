@@ -11,18 +11,11 @@ const empleadoSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: [true, "este email ya existe"],
-        validate(value){
-            if(!validator.isEmail(value)){
-                throw new Error("este email no es valido");
-            }
-        }
     },
 
     numero: {
-        type: Number,
-        required: true,
-        min: 8
+        type: String,
+        required: true
     },
 
     dni: {

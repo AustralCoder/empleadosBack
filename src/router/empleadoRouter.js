@@ -18,7 +18,7 @@ router.post("/empleado", async (req,res)=>{
 
     else{
         res.json({
-            status:"Exitoso",
+            status:"SUCCESS",
             message:"empleado registrado correctamente",
             data:result
         })
@@ -31,14 +31,14 @@ try {
     const result = await empleado.find()
     if(!result){
         res.json({
-            status: "Fallido",
+            status: "FAILED",
             message: "empleado no encontrado"
         })
 
     }
     else{
         res.json({
-            status: "Exitoso",
+            status: "SUCCESS",
             message: "Empleado encontrado",
             data:result
         })
@@ -56,14 +56,14 @@ router.get("/empleado/:id",async(req,res)=>{
 
         if(!result){
             res.json({
-                status: "Fallido",
+                status: "FAILED",
                 message: "empleado no encontrado con esta ID"
             })
     
         }
         else{
             res.json({
-                status: "Exitoso",
+                status: "SUCCESS",
                 message: "Empleado encontrado",
                 data:result
             })
@@ -84,14 +84,14 @@ router.put("/empleado/:id",async(req,res)=>{
         if (!result) {
             res.json({
                 status: "FAILED",
-                message: "Records not Update....",
+                message: "Empleado no actualizado",
                 data: result
             })
         }
         else {
             res.json({
                 status: "SUCCESS",
-                message: "Record is Updated successfully...",
+                message: "Empleado actualizado correctamente",
                 data: result
             })
         }
@@ -110,14 +110,14 @@ router.delete("/empleado/:id",async(req,res)=>{
 
         if(!result){
             res.json({
-                status: "Fallido",
+                status: "FAILED",
                 message: "empleado no fue eliminado con exito"
             })
     
         }
         else{
             res.json({
-                status: "Exitoso",
+                status: "SUCCESS",
                 message: "Empleado eliminado",
                 data:result
             })
